@@ -1,0 +1,39 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>StudentID</th>
+        <th>Name</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>BMI</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th scope="row">{{student.studentId}}</th>
+        <td>{{student.name}}</td>
+        <td>{{student.height}}</td>
+        <td>{{student.weight}}</td>
+        <td>{{student.weight/((student.height/100)*(student.weight/100))}}</td>
+        <td *ngIf="student.bmi > 25">อ้วน</td>
+        <td *ngIf="student.bmi  < 25">ผอม</td>
+      </tr>
+      <tr *ngFor="let s of studentList">
+          <th scope="row">{{s.studentId}}</th>
+          <td>{{s.name}}</td>
+          <td>{{s.height}}</td>
+          <td>{{s.weight}}</td>
+          <td>{{s.weight/((s.height/100)*(s.weight/100))}}</td>
+          <td *ngIf="s.bmi > 25">อ้วน</td>
+          <td *ngIf="s.bmi < 25">ผอม</td>
+        </tr>
+     
+    </tbody>
+  </table>
+<span *ngIf="score>50">เกรดA</span>
+<span *ngIf="score<50">เกรดF</span>
+{{name}}
+<router-outlet></router-outlet>
